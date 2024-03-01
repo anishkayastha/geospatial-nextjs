@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const aboutContent = {
     heading: {
-        title: "Blueprinting Tomorrow's Landscape Today",
+        title: "Crafting the Geospatial Blueprint for Tomorrow",
         subTitle: "About Us",
     },
 };

@@ -6,13 +6,13 @@ import Image from 'next/image';
 
 const aboutContent = {
     heading: {
-        title: "Where Creativity Meets Structural Integrity",
+        title: "Charting Tomorrow's Geospatial Excellence",
         subTitle: "About Us"
     },
     content: {
         img: "/images/hero-1-min.jpg",
-        title: "Architects of Innovation, Builders of Beauty.",
-        description: "Every structure we conceive tells a unique story, reflecting the aspirations and dreams of our clients. From conceptualization to realization, we immerse ourselves in the art of design, striving to capture the essence of each project.",
+        title: "Geospatial Architects, Engineering Tomorrow's Precision",
+        description: "In every project, we sculpt a distinctive narrative that echoes the strategic visions and aspirations of our clients. From inception to fruition, we immerse ourselves in the realm of geospatial innovation, tirelessly committed to crafting solutions that stand as testament to precision and foresight.",
         btn: {
             href: "/about",
             label: "Learn about us",

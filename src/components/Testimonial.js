@@ -18,19 +18,19 @@ const testimonialContent = {
             img: "/images/person-1-min.jpg",
             name: "Jane Cooper",
             titleRole: "Homeowner",
-            quote: "Working with arcraft was a dream come true. They truly understood our vision for our dream home and turned it into a stunning reality. Their attention to detail and creativity exceeded our expectations.Working with [Architect's Name] was a dream come true. They truly understood our vision for our dream home and turned it into a stunning reality. Their attention to detail and creativity exceeded our expectations."
+            quote: "Geospatial Systems exceeded our expectations in delivering cutting-edge GIS solutions. Their team's expertise and dedication ensured a seamless integration of geospatial intelligence into our projects, significantly enhancing our decision-making processes. The precision and innovation they brought to the table have truly set them apart as leaders in the geospatial industry."
         },
         {
             img: "/images/person-2-min.jpg",
             name: "Alexandra Moore",
             titleRole: "Interior Designer",
-            quote: "I've had the privilege of partnering with arcraft on several projects. Their ability to combine functionality, aesthetics, and sustainability in their designs is truly remarkable. Their spaces provide the perfect canvas for interior design excellence."
+            quote: "Working with Geospatial Systems has been a game-changer for our organization. Their commitment to excellence and attention to detail have elevated our understanding and utilization of geospatial data. The impact of their solutions on our planning and infrastructure assessments has been remarkable. We highly recommend Geospatial Systems for their professionalism and top-notch geospatial services."
         },
         {
             img: "/images/person-3-min.jpg",
             name: "James Mayer",
             titleRole: "Landscape Architect",
-            quote: "Collaborating with arcraft on projects has been a rewarding experience. Their ability to seamlessly integrate indoor and outdoor spaces, creating a harmonious flow, has elevated the overall design and user experience."
+            quote: "Geospatial Systems has been an invaluable partner in our journey to leverage geospatial technology. Their team's in-depth knowledge and tailored solutions have streamlined our processes, providing us with a competitive edge. From the initial consultation to the implementation phase, their commitment to delivering quality GIS services has been unwavering. We wholeheartedly endorse GeoSpatial Systems for their expertise and reliability."
         },
     ]
 

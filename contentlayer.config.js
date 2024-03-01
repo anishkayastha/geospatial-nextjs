@@ -85,11 +85,6 @@ const Project = defineDocumentType(() => ({
             description: "The featured image of the project",
             required: true,
         },
-        client: {
-            type: "string",
-            description: "The client of the project",
-            required: true,
-        },
         role: {
             type: "string",
             description: "The role of the project",
@@ -110,8 +105,33 @@ const Project = defineDocumentType(() => ({
 
 }));
 
+const Service = defineDocumentType(() => ({
+    name: "Service",
+    filePathPattern: `services/*.mdx`,
+    contentType: "mdx",
+    fields: {
+        title: {
+            type: "string",
+            description: "The title of the project",
+            required: true,
+        },
+        image: {
+            type: "string",
+            description: "The featured image of the project",
+            required: true,
+        }
+    },
+    computedFields: {
+        url: {
+            type: "string",
+            resolve: (doc) => `/${doc._raw.flattenedPath}`,
+        }
+    }
+
+}));
+
 export default makeSource({
     contentDirPath: "content",
-    documentTypes: [Post, Project],
+    documentTypes: [Post, Project, Service],
 });
 

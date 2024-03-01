@@ -6,9 +6,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const heroContent = {
     intro: {
-        title: "Where Creativity Meets Structural Integrity",
+        title: "Charting Tomorrow's Geospatial Excellence",
         subTitle: "Welcome",
-        description: "Welcome to a world where creativity meets unwavering structural integrity. At arcraft, we believe that exceptional design goes hand in hand with meticulous engineering.",
+        description: "Enter a realm where innovative geospatial solutions seamlessly merge with a foundation of excellence. Geospatial Systems Pvt. Ltd. advocates for the convergence of cutting-edge spatial design, delivering precise and impactful solutions for the future.",
         btn: {
             href: "/projects",
             label: "View Projects"
@@ -127,7 +127,7 @@ const Hero = ({ className }) => {
                             {/* <Image src='/images/dots.svg' width={200} height={200} alt='Dots background image' className='w-64' /> */}
                         </motion.div>
                     </div>
-                    <Image src="/images/landsat_1.jpg" width={600} height={50} alt='Hero-image' />
+                    <Image src="/images/landsat_1.jpg" width={580} height={50} alt='Hero-image' />
                 </div>
             </div>
         </section>

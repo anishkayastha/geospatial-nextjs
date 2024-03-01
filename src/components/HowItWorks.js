@@ -15,7 +15,7 @@ import {
 
 const howItWorksContent = {
     heading: {
-        title: "Where Creativity Meets Structural Integrity",
+        title: "Charting Tomorrow's Geospatial Excellence",
         subTitle: "How It Works",
         description: "At arcraft we're dedicated to shaping environments that transcend mere structures, weaving stories and experiences into every design."
     },
@@ -23,8 +23,8 @@ const howItWorksContent = {
         {
             number: '01',
             icon: BiHardHat,
-            title: "Project Initiation",
-            description: "At arcraft we're dedicated to shaping environments that transcend mere structures.",
+            title: "LiDAR",
+            description: "We leverage LiDAR technology to provide advanced geospatial solutions, using laser-based remote sensing to capture precise and detailed 3D terrain and object data for enhanced mapping and analysis.",
             btn: {
                 href: "#",
                 label: "Learn More"
@@ -33,8 +33,8 @@ const howItWorksContent = {
         {
             number: '02',
             icon: BiPaintRoll,
-            title: "Conceptual Design",
-            description: "At arcraft we're dedicated to shaping environments that transcend mere structures.",
+            title: "WebGIS",
+            description: "We provide WebGIS services empower clients with interactive and accessible geospatial solutions, facilitating seamless mapping, analysis, and data visualization through web-based interfaces.",
             btn: {
                 href: "#",
                 label: "Learn More"
@@ -43,8 +43,8 @@ const howItWorksContent = {
         {
             number: '03',
             icon: BiNote,
-            title: "Construction Documents",
-            description: "At arcraft we're dedicated to shaping environments that transcend mere structures.",
+            title: "Photogrammetry",
+            description: "Utilizing state-of-the-art photogrammetry techniques, we extract precise measurements and 3D models from aerial or satellite imagery, offering comprehensive geospatial solutions for accurate mapping and analysis.",
             btn: {
                 href: "#",
                 label: "Learn More"
@@ -54,8 +54,8 @@ const howItWorksContent = {
     features: [
         {
             icon: BiHardHat,
-            title: "Design Development",
-            description: "Our journey begins with a spark of imagination and a commitment to turning dreams into tangible spaces. From concept to construction, we orchestrate a symphony of design.",
+            title: "Research and Development",
+            description: "GeoSpatial Systems Pvt. Ltd.'s R&D team pioneers GIS tools for Water Supply, Urban, Environment, and Transportation Management, continually contributing to cutting-edge solutions at the intersection of engineering and GIS technology innovation.",
             btn: {
                 href: "#",
                 label: "Learn More",
@@ -63,8 +63,8 @@ const howItWorksContent = {
         },
         {
             icon: BiBulb,
-            title: "Construction Administration",
-            description: "Our journey begins with a spark of imagination and a commitment to turning dreams into tangible spaces. From concept to construction, we orchestrate a symphony of design.",
+            title: "Drone Mapping",
+            description: "GeoSpatial specializes in drone mapping, exemplified by a project in Sankhu, Shankarapur Municipality. The focused flight trajectory captured images processed into Contours, DEMs, orthophotos, and 3D vectorization models, meeting client specifications efficiently.",
             btn: {
                 href: "#",
                 label: "Learn More",
@@ -72,8 +72,8 @@ const howItWorksContent = {
         },
         {
             icon: BiOutline,
-            title: "Post-Occupancy Evaluation",
-            description: "Our journey begins with a spark of imagination and a commitment to turning dreams into tangible spaces. From concept to construction, we orchestrate a symphony of design.",
+            title: "Map Digitization",
+            description: "Map digitization, our core expertise since inception, converts analog features to digital using a tablet. We create vector maps from geo-referenced scans, ensuring industry-standard outputs for client workstations with GIS software like Nigmas, AutoCad, ArcGIS, and MicroStation.",
             btn: {
                 href: "#",
                 label: "Learn More",
@@ -81,8 +81,8 @@ const howItWorksContent = {
         },
         {
             icon: BiLayer,
-            title: "Schematic Design",
-            description: "Our journey begins with a spark of imagination and a commitment to turning dreams into tangible spaces. From concept to construction, we orchestrate a symphony of design.",
+            title: "3D Modeling",
+            description: "GeoSpatial excels in 3D modeling for disaster management, building mapping, and simulations. Accomplished projects include Sankhu, Shankarapur, Sindhuli, and locations like Kathmandu Valley and Jhumkhola, serving urban development, hydropower, and disaster prevention.",
             btn: {
                 href: "#",
                 label: "Learn More",

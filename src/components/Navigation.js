@@ -9,10 +9,12 @@ import Image from 'next/image';
 
 const navigationMenu = [
     { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/projects", label: "Projects" },
+    { href: "/libraries", label: "Libraries" },
     { href: "/contact", label: "Contact" },
+    { href: "/careers", label: "Careers" },
 ]
 
 const Navigation = () => {
@@ -27,6 +29,8 @@ const Navigation = () => {
         newPathname = '/blog';
     } else if (pathname.includes('/projects')) {
         newPathname = '/projects';
+    } else if (pathname.includes('services')) {
+        newPathname = '/services';
     }
 
     let wHeight = null;

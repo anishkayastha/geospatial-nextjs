@@ -53,11 +53,6 @@ const ProjectContent = ({ project }) => {
                 <div className='mx-auto max-w-2xl mb-10'>
                     <div className="flex justify-between">
                         <div className="border-l border-gray-200 relative pl-3 before:content-[''] before:top-0 before:-left-[1px] before:absolute before:h-7 before:w-[1px] before:bg-violet-600">
-                            <span className="block text-gray-400">Client</span>
-                            <span>{ project.client }</span>
-                        </div>
-
-                        <div className="border-l border-gray-200 relative pl-3 before:content-[''] before:top-0 before:-left-[1px] before:absolute before:h-7 before:w-[1px] before:bg-violet-600">
                             <span className="block text-gray-400">Year</span>
                             <span>{ project.year }</span>
                         </div>

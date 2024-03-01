@@ -72,12 +72,12 @@ const storyContent = {
         ]
     },
     storyText: {
-        heading: "Crafting Spaces, Shaping Dreams",
-        p1: "Envisioned by a group of passionate architects, our story is one of perseverance and boundless creativity. We started as a small team with big dreams, driven by the belief that architecture holds the power to shape lives and communities. Through years of dedication and unwavering commitment, we have evolved into a dynamic force, seamlessly blending aesthetics with functionality to create spaces that inspire and endure.",
-        p2: "Our journey has been defined by our relentless pursuit of excellence and our eagerness to embrace new challenges. From the early projects that ignited our spark to the iconic structures that now stand as testaments to our vision, every step of our journey is etched with a passion for innovation. Today, we stand on the shoulders of our accomplishments, guided by the same spirit that set us on this path – to shape a world that celebrates the harmony of design, environment, and human experience.",
+        heading: "Empowering Tomorrow's World with Geospatial Solutions",
+        p1: "At the heart of our GIS journey is a tale of innovation and commitment. Born from the vision of passionate professionals, we've evolved into a dynamic force, seamlessly blending technological expertise with an artistic grasp of spatial dynamics. From foundational projects that sparked our journey to landmark solutions defining our legacy, each step resonates with a fervor for groundbreaking geospatial innovation. Today, GeoSpatial Systems Pvt. Ltd. stands as a trailblazer in Nepal, the first joint venture company of its kind, committed to global standards in Geographical Information Systems (GIS).",
+        p2: "Established in July 1997, GeoSpatial Systems is the brainchild of visionary Nepalese promoters and the support of Nakanihon Air Co., Ltd. (NNK), a renowned Japanese Air Survey Company. As active members of the Computer Association of Nepal (CAN) and associate members of the Federation of Nepalese Chamber of Commerce and Industry (FNCCI), our diverse team of professionals is equipped with cutting-edge technology. With over 100 workstations and a robust infrastructure connecting us to the world, we invite you to join us in shaping a future where geospatial excellence transforms data into informed decisions and innovative solutions. Welcome to GeoSpatial Systems, where we craft geospatial vistas today to shape the landscapes of tomorrow.",
         signature: "/images/Bill_Smith_Signature.svg",
-        name: "Bill Smith",
-        roleTitle: "CEO and Co-Founder"
+        name: "Suresh Shrestha",
+        roleTitle: "MD and Founder"
     }
 }
 
@@ -134,7 +134,7 @@ const Story = ({ className }) => {
                         })}
                     </div>
 
-                    <div className='md:w-4/12 self-center space-x-7'>
+                    <div className='md:w-4/12 self-center space-y-7 md:mb-0'>
                         {storyContent.column3.imgs.map((item, idx) => {
                             idx *= 0.5;
                             return (

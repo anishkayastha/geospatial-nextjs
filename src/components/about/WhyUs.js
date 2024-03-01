@@ -6,24 +6,24 @@ import Image from "next/image";
 
 const whyUsContent = {
     heading: {
-        title: "Blueprinting Tommorow's Landscape Today",
+        title: "Crafting the Geospatial Blueprint for Tomorrow",
         subTitle: "Why Us",
     },
     whyusItems: [
         {
             icon: BiHardHat,
-            title: "Unparalled Expertise",
-            description: "With over 27 years of experience in the industry, our team of architects and designers brings a wealth of knowledge to every project.",
+            title: "Unmatched Geospatial Mastery",
+            description: "With a legacy spanning 27 years in the industry, our team of GIS professionals brings unparalleled expertise to every project.",
         },
         {
             icon: BiArch,
-            title: "Innovative Design",
-            description: "Our portfolio showcases award-winning designs that have earned accolades for their uniqueness and functionality.",
+            title: "Cutting-Edge Solutions",
+            description: "Our portfolio proudly displays innovative geospatial designs that have garnered acclaim for their ingenuity and practicality.",
         },
         {
             icon: BiSolidUser,
-            title: "Client-Centered Approach",
-            description: "We believe in collaboration. Your vision and goals are at the forefront of our design process.",
+            title: "Partners in Progress",
+            description: "We foster collaboration. Your vision and objectives take center stage in our geospatial solutions, ensuring a client-centered approach throughout the process.",
         }
     ]
 };
