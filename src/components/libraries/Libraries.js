@@ -2,8 +2,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { allPosts } from "contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
+import { allProjects } from "contentlayer/generated";
+import { compareDesc } from "date-fns";
 import ReactPaginate from "react-paginate";
 
 import { motion } from "framer-motion";
@@ -12,11 +12,11 @@ const Items = ({ currentItems }) => {
     return (
         <>
             {currentItems &&
-                currentItems.map((post, index) => {
+                currentItems.map((project, index) => {
                     index *= 0.05;
                     return (
                         <motion.div
-                            className="bg-white relative overflow-hidden group"
+                            className="relative overflow-hidden w-full lg:w-6/12 p-2 group"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{
                                 opacity: 1,
@@ -24,36 +24,26 @@ const Items = ({ currentItems }) => {
                                 transition: { delay: index, duration: 0.3 },
                             }}
                             viewport={{ once: true }}
-                            key={post.title}>
+                            key={index}>
                             <Link
-                                href={post.url}
-                                className="relative block overflow-hidden">
+                                href={project.url}
+                                className="overflow-hidden block relative">
 
                                 <Image
-                                    src={post.image}
+                                    src={project.image}
                                     alt="joefreycodes.com"
                                     width={1064}
                                     height={644}
-                                    className="object-cover object-center h-[200px] duration-300 transition-all ease-in-out group-hover:scale-[1.05]"
+                                    className="object-cover object-center h-[400px] !max-w-full duration-300 transition-all ease-in-out group-hover:scale-[1.05]"
                                 />
                             </Link>
-                            <div className="p-8">
-                                <p className="text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]">
-                                    {format(parseISO(post.date), "LLL d, yyyy")} • {post.author}
-                                </p>
+                            <div className="py-8 px-2">
+                                <span className="block mb-1 text-gray-500">{project.role}</span>
                                 <h3 className="mb-4">
-                                    <Link href={post.url} className="text-lg leading-none">
-                                        {post.title}
+                                    <Link href={project.url} className="text-2xl leading-none">
+                                        {project.title}
                                     </Link>
                                 </h3>
-
-                                <p>
-                                    <Link
-                                        href={post.url}
-                                        className="text-[12px] tracking-[2px] uppercase border-b-2 pb-2 inline-block border-violet-600">
-                                        Read more
-                                    </Link>
-                                </p>
                             </div>
                         </motion.div>
                     );
@@ -62,33 +52,16 @@ const Items = ({ currentItems }) => {
     );
 };
 
-const Posts = ({ className, itemsPerPage, archive = false, params }) => {
+const Projects = ({ className, itemsPerPage }) => {
+    const items = allProjects.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
+
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
     const [clickPaginate, setclickPaginate] = useState(false);
     const ref = useRef(null);
-
-    let items = null;
-    if (archive === false) {
-        items = allPosts.sort((a, b) =>
-            compareDesc(new Date(a.date), new Date(b.date))
-        );
-    } else {
-        if (params?.slug) {
-            items = allPosts.filter((post) =>
-                post.categories.some(
-                    (category) =>
-                        category.title
-                            .toLowerCase()
-                            .trim()
-                            .replace(/[^\w\s-]/g, "")
-                            .replace(/[\s_-]+/g, "-")
-                            .replace(/^-+|-+$/g, "") === params.slug
-                )
-            );
-        }
-    }
 
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage;
@@ -96,25 +69,23 @@ const Posts = ({ className, itemsPerPage, archive = false, params }) => {
         setPageCount(Math.ceil(items.length / itemsPerPage));
 
         if (clickPaginate === true) {
-            setTimeout(function () {
-                ref.current?.scrollIntoView({ block: "start", behavior: "smooth" });
-            }, 300);
+            ref.current?.scrollIntoView({ top: -50, behavior: "smooth" });
             setclickPaginate(false);
         }
     }, [setCurrentItems, setPageCount, setclickPaginate, itemOffset, itemsPerPage, clickPaginate, ref]);
 
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
+
         setclickPaginate(true);
         setItemOffset(newOffset);
     };
     
     if (!items) return null;
-
     return (
         <section className={`${className}`} ref={ref}>
             <div className="container px-4 mx-auto">
-                <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10">
                     <Items currentItems={currentItems} />
                 </div>
 
@@ -145,4 +116,4 @@ const Posts = ({ className, itemsPerPage, archive = false, params }) => {
     );
 };
 
-export default Posts;
+export default Projects;

@@ -8,9 +8,36 @@ import { compareDesc, format, parseISO } from 'date-fns';
 import { motion } from 'framer-motion';
 import { getMDXComponent } from 'next-contentlayer/hooks';
 import PostCard from '@/components/projects/PostCard';
+import Carousel from '@/components/Carousel';
+import Fancybox from '@/components/Fancybox';
+
+async function getImagesFromFolder(folderPath) {
+    const images = [];
+  
+    // Fetch the image filenames from the specified folder
+    const response = await fetch(`/api/getImages?folderPath=${folderPath}`);
+    const data = await response.json();
+  
+    // Assume the API response is an array of filenames
+    if (Array.isArray(data)) {
+      images.push(...data);
+    }
+  
+    return images;
+}
 
 const ProjectContent = ({ project }) => {
-  const projects = allProjects.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+    const projects = allProjects.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+
+    // Assuming `project.slug` is the slug associated with the current project
+    const slug = project.slug;
+    console.log(slug);
+
+    // Dynamically generate the folder path based on the slug
+    const folderPath = `/projects/${slug}`;
+
+    // Fetch the image filenames from the public/projects/[slug] folder
+    const imageFilenames = getImagesFromFolder(folderPath);
 
   let MDXContent;
 
@@ -63,9 +90,46 @@ const ProjectContent = ({ project }) => {
                         </div>
                     </div>
                 </div>
+                <div className="text-justify">
+                    <MDXContent />
+                </div>
+                
+                <div>
+                    <Fancybox
+                        // Sample options
+                        options={{
+                            Carousel: {
+                                infinite: false,
+                            },
+                        }}
+                    >
+                        <Carousel
+                            // Sample options
+                            options={{ infinite: false }}
+                        >
+                            {/* Dynamically generate carousel slides based on image filenames */}
+                            {imageFilenames.map((filename, idx) => (
+                                <div
+                                    key={idx}
+                                    className="f-carousel__slide"
+                                    data-fancybox="gallery"
+                                    data-src={`${folderPath}/${filename}`}
+                                    data-thumb-src={`${folderPath}/${filename}`}
+                                >
+                                    <img
+                                    alt=""
+                                    src={`${folderPath}/${filename}`}
+                                    width="400"
+                                    height="300"
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                    </Fancybox>
+                </div>
 
-                <MDXContent />
             </article>
+
         </div>
 
         {/* More Projects */}

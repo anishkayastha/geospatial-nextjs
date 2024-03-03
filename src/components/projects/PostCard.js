@@ -41,6 +41,8 @@ const PostCard = ({project, index}) => {
                     </h3>
                 </div>
 
+                
+
             </motion.div>
         </> 
   )

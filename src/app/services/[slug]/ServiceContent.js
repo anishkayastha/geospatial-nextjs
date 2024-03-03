@@ -43,7 +43,7 @@ const ServiceContent = ({ service }) => {
                 <Image src={service.image} width={1065} height={644} className='object-cover object-top' alt={service.title} />
             </div>
 
-            <article className="prose mx-auto max-w-2xl">
+            <article className="prose mx-auto max-w-2xl text-justify">
                 
                 <MDXContent />
             </article>
