@@ -11,33 +11,16 @@ import PostCard from '@/components/projects/PostCard';
 import Carousel from '@/components/Carousel';
 import Fancybox from '@/components/Fancybox';
 
-async function getImagesFromFolder(folderPath) {
-    const images = [];
-  
-    // Fetch the image filenames from the specified folder
-    const response = await fetch(`/api/getImages?folderPath=${folderPath}`);
-    const data = await response.json();
-  
-    // Assume the API response is an array of filenames
-    if (Array.isArray(data)) {
-      images.push(...data);
-    }
-  
-    return images;
-}
-
 const ProjectContent = ({ project }) => {
     const projects = allProjects.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
     // Assuming `project.slug` is the slug associated with the current project
-    const slug = project.slug;
-    console.log(slug);
-
+    const slug = project.url;
+    
     // Dynamically generate the folder path based on the slug
-    const folderPath = `/projects/${slug}`;
+    const folderPath = `${slug}`;
 
     // Fetch the image filenames from the public/projects/[slug] folder
-    const imageFilenames = getImagesFromFolder(folderPath);
 
   let MDXContent;
 
