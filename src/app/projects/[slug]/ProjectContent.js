@@ -10,17 +10,33 @@ import { getMDXComponent } from 'next-contentlayer/hooks';
 import PostCard from '@/components/projects/PostCard';
 import Carousel from '@/components/Carousel';
 import Fancybox from '@/components/Fancybox';
+import fs from 'fs-extra';
+import path from 'path';
+
+
+
 
 const ProjectContent = ({ project }) => {
+
+
+
+
     const projects = allProjects.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
     // Assuming `project.slug` is the slug associated with the current project
     const slug = project.url;
     
     // Dynamically generate the folder path based on the slug
-    const folderPath = `${slug}`;
+    //const imageDirectory = `${slug}`;
+
+    const images = project.images;
+
+    //const imageList = images.keys().map(image => images(image)); 
 
     // Fetch the image filenames from the public/projects/[slug] folder
+    // const imageFilenames = getFilenamesInDirectory(imageDirectory);
+
+    // console.log(imageFilenames)
 
   let MDXContent;
 
@@ -31,6 +47,8 @@ const ProjectContent = ({ project }) => {
   } else {
     MDXContent = getMDXComponent(project.body.code);
   }
+
+  
   
   return (
     <motion.div
@@ -91,28 +109,29 @@ const ProjectContent = ({ project }) => {
                             options={{ infinite: false }}
                         >
                             {/* Dynamically generate carousel slides based on image filenames */}
-                            {imageFilenames.map((filename, idx) => (
-                                <div
-                                    key={idx}
-                                    className="f-carousel__slide"
-                                    data-fancybox="gallery"
-                                    data-src={`${folderPath}/${filename}`}
-                                    data-thumb-src={`${folderPath}/${filename}`}
-                                >
-                                    <img
-                                    alt=""
-                                    src={`${folderPath}/${filename}`}
-                                    width="400"
-                                    height="300"
-                                    />
-                                </div>
-                            ))}
+                            {images.map((filename, idx) => {
+                                return (
+                                    <div
+                                        key={idx}
+                                        className="f-carousel__slide"
+                                        data-fancybox="gallery"
+                                        data-src={`${filename}`}
+                                        data-thumb-src={`${filename}`}
+                                    >
+                                        <Image
+                                            alt=""
+                                            src={`${filename}`}
+                                            width="400"
+                                            height="300"
+                                        />
+                                    </div>
+                                );
+                            })}
                         </Carousel>
                     </Fancybox>
                 </div>
-
+                
             </article>
-
         </div>
 
         {/* More Projects */}
@@ -130,7 +149,6 @@ const ProjectContent = ({ project }) => {
                 <Link href="/projects" className="transition-all duration-300 ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase bg-violet-600 py-4 px-5 text-white hover:bg-white hover:text-violet-600 hover:shadow-2xl">View All Projects</Link>
             </div>
         </div>
-
     </motion.div>
   )
 }

@@ -85,6 +85,11 @@ const Project = defineDocumentType(() => ({
             description: "The featured image of the project",
             required: true,
         },
+        images: {
+            type: "json",
+            description: "The featured images of the project",
+            required: true,
+        },
         role: {
             type: "string",
             description: "The role of the project",

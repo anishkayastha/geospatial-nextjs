@@ -1,9 +1,29 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
 const ContactForm = ({ className }) => {
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const sendMail = async (e) => {
+        e.preventDefault();
+
+        const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                subject,
+                message
+            })
+        })
+        console.log(await response.json())
+    }
+
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +47,7 @@ const ContactForm = ({ className }) => {
                         />
                     </div>
                     <div className="lg:w-6/12 flex-1">
-                        <form className="p-14 bg-white h-full">
+                        <form onSubmit={sendMail} className="p-14 bg-white h-full">
                             <h2 className="text-gray-800 mb-4 text-3xl">Get In Touch</h2>
                             <p className="text-gray-500 mb-6">
                                 Do you have any questions or feedback to share with us? Please use the form below to get in touch.
